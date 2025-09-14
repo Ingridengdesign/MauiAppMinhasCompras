@@ -1,9 +1,15 @@
 ﻿using MauiAppMinhasCompras.Helpers;
+using System.Collections.ObjectModel;
+using MauiAppMinhasCompras.Models;
+using MauiAppMinhasCompras.Views;
 
 namespace MauiAppMinhasCompras
 {
     public partial class App : Application
     {
+
+        public static ObservableCollection<Produto> ListaProdutos { get; set; } = new ObservableCollection<Produto>();
+
         static SQLiteDatabaseHelper _db;
         public static SQLiteDatabaseHelper Db
         {
@@ -21,6 +27,7 @@ namespace MauiAppMinhasCompras
 
                 return _db;
             }
+            
         }
 
         public App()
@@ -29,6 +36,8 @@ namespace MauiAppMinhasCompras
 
             //MainPage = new AppShell();
             MainPage = new NavigationPage(new Views.ListaProduto());
+
+            Routing.RegisterRoute(nameof(Relatorio), typeof(Relatorio));
         }
     }
 }

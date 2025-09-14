@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using MauiAppMinhasCompras.Models;
+using MauiAppMinhasCompras.Views;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,6 +18,13 @@ namespace MauiAppMinhasCompras.ViewModels
         private List<Produto> _todosOsProdutos = new();
 
         [RelayCommand]
+        private async Task IrParaRelatorio()
+        {
+            await Shell.Current.GoToAsync(nameof(Relatorio));
+        }
+
+
+            [RelayCommand]
         private async Task Remover(Produto produto)
         {
             if (produto == null) return;

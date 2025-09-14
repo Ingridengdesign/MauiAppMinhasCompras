@@ -8,14 +8,18 @@
         <ToolbarItem Text="Salvar" Clicked="ToolbarItem_Clicked" />
     </ContentPage.ToolbarItems>
 
-    <VerticalStackLayout Spacing="10" Padding="10">
+    <VerticalStackLayout Spacing="10" Padding="15">
         <Label Text="Descrição do Produto:" />
-        <Entry x:Name="txt_descricao" />
+        <Entry x:Name="txt_descricao" Placeholder="Ex: Arroz tipo 1" />
 
         <Label Text="Quantidade:" />
-        <Entry x:Name="txt_quantidade" Keyboard="Numeric" />
+        <Entry x:Name="txt_quantidade" Keyboard="Numeric" Placeholder="Ex: 5" />
 
         <Label Text="Preço Unitário:" />
-        <Entry x:Name="txt_preco" Keyboard="Numeric" />
+        <Entry x:Name="txt_preco" Keyboard="Numeric" Placeholder="Ex: 25,50" />
+
+        <Label Text="Data da Compra" Margin="0, 10, 0, 0" />
+        <DatePicker x:Name="dpk_data" Format="dd/MM/yyyy" />
+
     </VerticalStackLayout>
 </ContentPage>

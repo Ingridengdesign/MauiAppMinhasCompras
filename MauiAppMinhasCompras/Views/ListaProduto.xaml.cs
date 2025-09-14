@@ -70,6 +70,18 @@ public partial class ListaProduto : ContentPage
         DisplayAlert("Total dos Produtos", msg, "OK");
     }
 
+    private void ToolbarItem_Relatorio_Clicked(object sender, EventArgs e)
+    {
+        try
+        {
+            Navigation.PushAsync(new Views.Relatorio());
+        }
+        catch (Exception ex)
+        {
+            DisplayAlert("Ops", ex.Message, "OK");
+        }
+    }   
+
     private async void MenuItem_Clicked(object sender, EventArgs e)
     {
         try
